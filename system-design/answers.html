@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Answers - System Design</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h3><a href="../index.html" style="text-decoration:none; color:white;">KZEDU</a> / Real World Scenarios</h3>
+            </div>
+            <nav>
+                <a href="index.html">Back to Topic</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <h1>Scenario Answer Key</h1>
+            <p>Why the "Real World" works the way it does.</p>
+        </section>
+
+        <div class="course-layout">
+            <!-- Sidebar with Questions List -->
+            <aside class="course-sidebar">
+                <h3>Questions</h3>
+                <nav id="questions-nav" class="course-nav">
+                    <!-- Javascript will populate this -->
+                </nav>
+            </aside>
+
+            <!-- Main Content Area -->
+            <main class="course-content">
+                <div class="card">
+                    <div id="qa-container">
+                        <p style="text-align:center; opacity:0.7;">Loading answers...</p>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="quiz.html" class="btn">Test Your Knowledge</a>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/questions-data.js"></script>
+    <script>
+        // Dynamic Answer Loader with Sidebar & Tab Logic
+        function loadAnswers() {
+            const container = document.getElementById('qa-container');
+            const navContainer = document.getElementById('questions-nav');
+            
+            if (typeof quizQuestionsData === 'undefined') {
+                 container.innerHTML = '<p style="color:red; text-align:center;">Error: quizQuestionsData not found.</p>';
+                 return;
+            }
+
+            container.innerHTML = ''; // Clear loading
+            navContainer.innerHTML = ''; // Clear nav
+
+            // 1. Generate Content
+            quizQuestionsData.forEach((q, index) => {
+                const qId = `q-${index + 1}`;
+                
+                // Sidebar Link
+                const link = document.createElement('a');
+                link.href = `#${qId}`;
+                link.className = 'course-nav-item';
+                let shortText = q.text.replace('SCENARIO: ', '');
+                if(shortText.length > 30) shortText = shortText.substring(0, 27) + '...';
+                link.innerHTML = `<span>${index + 1}.</span> <span>${shortText}</span>`;
+                navContainer.appendChild(link);
+
+                // Content Item (Hidden by default)
+                const el = document.createElement('div');
+                el.id = qId;
+                el.className = 'qa-item fade-in';
+                el.style.display = 'none'; // Default hidden
+                
+                el.innerHTML = `
+                    <div class="card" style="border-left: 4px solid var(--primary);">
+                        <div class="qa-question" style="color:var(--text-main); font-size:1.2rem; margin-bottom:1rem;">
+                            <span style="color:var(--primary); font-weight:bold;">Scenario ${index + 1}:</span> 
+                            ${q.text.replace('SCENARIO: ', '')}
+                        </div>
+                        <div class="qa-answer" style="margin-top:0.5rem; font-size:1.1rem; padding:1rem; background:rgba(16, 185, 129, 0.1); border-radius:8px; border:1px solid var(--success);">
+                            <strong>Correct Answer:</strong> <span style="color:var(--success);">${q.options[q.correctIndex]}</span>
+                        </div>
+                        <div class="qa-explanation" style="margin-top:1.5rem;">
+                            <h4 style="color:var(--text-muted); font-size:0.9rem; text-transform:uppercase; letter-spacing:1px; margin-bottom:0.5rem;">Why this is the Senior Answer:</h4>
+                            <p style="line-height:1.6; color:#e2e8f0;">${q.feedback}</p>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(el);
+            });
+
+            // 2. Tab Logic
+            const links = navContainer.querySelectorAll('.course-nav-item');
+            const items = container.querySelectorAll('.qa-item');
+
+            function showQuestion(idIndex) { // 1-based index
+                const targetId = `q-${idIndex}`;
+                
+                // Hide All
+                items.forEach(item => item.style.display = 'none');
+                links.forEach(link => link.classList.remove('active'));
+
+                // Show Target
+                const target = document.getElementById(targetId);
+                if(target) {
+                    target.style.display = 'block';
+                    setTimeout(() => target.classList.add('visible'), 10);
+                }
+
+                // Activate Link
+                if(links[idIndex-1]) {
+                    links[idIndex-1].classList.add('active');
+                }
+
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // Click Handlers
+            links.forEach((link, idx) => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    showQuestion(idx + 1);
+                });
+            });
+
+            // Initial Load
+            showQuestion(1);
+        }
+
+        loadAnswers();
+    </script>
+</body>
+</html>

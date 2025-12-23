@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - System Design</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h3><a href="../index.html" style="text-decoration:none; color:white;">KZEDU</a> / Quiz</h3>
+            </div>
+            <nav>
+                <a href="index.html">Exit Quiz</a>
+            </nav>
+        </header>
+
+        <div id="quiz-container" class="card">
+            
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+
+            <div id="question-box">
+                <div class="question-header" style="display: flex; justify-content: space-between; margin-bottom: 1rem; color: var(--text-muted);">
+                    <span id="question-number">Question 1/10</span>
+                    <span id="score-display">Score: 0</span>
+                </div>
+                
+                <h2 id="question-text" class="question-text">Loading Question...</h2>
+
+                <div id="options-container" class="options-grid">
+                    <!-- Options injected by JS -->
+                </div>
+
+                <div id="feedback" class="feedback">
+                    <!-- Feedback injected by JS -->
+                </div>
+
+                <div style="margin-top: 2rem; text-align: right;">
+                    <button id="next-btn" class="btn" style="display: none;">Next Question</button>
+                    <button id="finish-btn" class="btn" style="display: none;">See Results</button>
+                </div>
+            </div>
+
+            <div id="result-box" style="display: none; text-align: center;">
+                <h2>Quiz Complete!</h2>
+                <div id="final-score" style="font-size: 4rem; margin: 2rem 0; font-weight: bold; background: linear-gradient(to right, #10b981, #3b82f6); -webkit-background-clip: text; background-clip: text; color: transparent;">0%</div>
+                <p id="result-message">Great job completing the assessment.</p>
+                <br>
+                <div style="display: flex; gap: 1rem; justify-content: center;">
+                    <button id="restart-btn" class="btn">Restart Quiz</button>
+                    <a href="answers.html" class="btn btn-secondary">Review Answers</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="js/questions-data.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/quiz.js"></script>
+</body>
+</html>
