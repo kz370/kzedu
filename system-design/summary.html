@@ -1,218 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Summary - System Design</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
 
-    <div class="container">
-        <header>
-            <div class="logo">
-                <h3><a href="../index.html" style="text-decoration:none; color:white;">KZEDU</a> / System Design</h3>
-            </div>
-            <nav>
-                <a href="index.html">Back to Topic</a>
-            </nav>
-        </header>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Course Summary - System Design</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet">
+    </head>
 
-        <section class="hero fade-in">
-            <h1>Mastering System Design</h1>
-            <p>From Interview Frameworks to High-Scale Architecture.</p>
-        </section>
+    <body>
 
-        <div class="course-layout">
-            <!-- Sidebar Navigation -->
-            <aside class="course-sidebar fade-in">
-                <h3>Course Outline</h3>
-                <nav class="course-nav">
-                    <a href="#intro" class="course-nav-item active">🎥 Video Lecture</a>
-                    <a href="#radio" class="course-nav-item">1. The RADIO Framework</a>
-                    <a href="#concepts" class="course-nav-item">2. Core Concepts</a>
-                    <a href="#backend" class="course-nav-item">3. Backend & API</a>
-                    <a href="#data" class="course-nav-item">4. Data Layer</a>
-                    <a href="#caching" class="course-nav-item">5. Caching Strategies</a>
-                    <a href="#async" class="course-nav-item">6. Async & Distributed</a>
-                    <a href="#observability" class="course-nav-item">8. Observability</a>
-                    <a href="#scenarios" class="course-nav-item">✅ Quiz</a>
+        <div class="container">
+            <header>
+                <div class="logo">
+                    <h3><a href="../index.html"
+                            style="text-decoration:none; color:white;">KZEDU</a>
+                        / System Design</h3>
+                </div>
+                <nav>
+                    <a href="index.html">Back to Topic</a>
                 </nav>
-            </aside>
+            </header>
 
-            <!-- Main Content -->
-            <main class="course-content">
+            <section class="hero fade-in">
+                <h1>Mastering System Design</h1>
+                <p>From Interview Frameworks to High-Scale Architecture.</p>
+            </section>
 
-                <!-- Video Section -->
-                <div id="intro" class="summary-section fade-in">
-                    <h2 style="margin-bottom: 1rem;">Video Lecture</h2>
-                    <div class="video-container">
-                        <video controls style="width: 100%;">
-                            <source src="System Design Concepts Course and Interview Prep.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
+            <div class="course-layout">
+                <!-- Sidebar Navigation -->
+                <aside class="course-sidebar fade-in">
+                    <h3>Course Outline</h3>
+                    <nav class="course-nav">
+                        <a href="#intro" class="course-nav-item active">🎥 Video
+                            Lecture</a>
+                        <a href="#radio" class="course-nav-item">1. The RADIO
+                            Framework</a>
+                        <a href="#concepts" class="course-nav-item">2. Core
+                            Concepts</a>
+                        <a href="#backend" class="course-nav-item">3. Backend &
+                            API</a>
+                        <a href="#data" class="course-nav-item">4. Data
+                            Layer</a>
+                        <a href="#caching" class="course-nav-item">5. Caching
+                            Strategies</a>
+                        <a href="#async" class="course-nav-item">6. Async &
+                            Distributed</a>
+                        <a href="#observability" class="course-nav-item">8.
+                            Observability</a>
+                        <a href="#scenarios" class="course-nav-item">✅ Quiz</a>
+                    </nav>
+                </aside>
+
+                <!-- Main Content -->
+                <main class="course-content">
+
+                    <!-- Video Section -->
+                    <div id="intro" class="summary-section fade-in">
+                        <h2 style="margin-bottom: 1rem;">Video Lecture</h2>
+                        <div class="video-container" id="videoContainer"></div>
+
                     </div>
-                </div>
 
-                <!-- 1. The RADIO Framework -->
-                <div id="radio" class="summary-section fade-in">
-                    <div class="card">
-                        <h2>1. The Interview Framework (RADIO)</h2>
-                        
-                        <div class="grid-2">
-                            <div class="note-card">
-                                <h3 class="section-header">R - Requirements</h3>
-                                <p><strong>Functional:</strong> What does the system DO?</p>
-                                <p><strong>Non-Functional (NFRs):</strong> Consistency, Availability.</p>
-                                <p class="analogy">🍕 <strong>Analogy:</strong> Like ordering a Pizza. <br>Functional: "I want Pepperoni." <br>Non-Functional: "It must arrive in 30 mins (Latency) and be hot (Quality)."</p>
-                            </div>
-                            <div class="note-card">
-                                <h3 class="section-header">A - Architecture</h3>
-                                <p>Draw the "Happy Path" first.</p>
-                                <p>Client → Load Balancer → API → Service → DB.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    <!-- 1. The RADIO Framework -->
+                    <div id="radio" class="summary-section fade-in">
+                        <div class="card">
+                            <h2>1. The Interview Framework (RADIO)</h2>
 
-                <!-- 2. Core Concepts -->
-                <div id="concepts" class="summary-section fade-in">
-                    <div class="card">
-                        <h2>2. Core Concepts: Beyond Buzzwords</h2>
-                        
-                        <div class="note-card">
-                            <h3 class="section-header">Scalability vs. Performance</h3>
-                            <ul class="styled-list">
-                                <li><strong>Performance:</strong> Speed of a single unit.</li>
-                                <li><strong>Scalability:</strong> Handling more load.</li>
-                            </ul>
-                            <p class="analogy">☕ <strong>Analogy:</strong> <br><strong>Performance:</strong> Training a barista to make espresso in 10s instead of 30s. <br><strong>Scalability:</strong> Hiring 5 more baristas to serve 500 customers.</p>
-                        </div>
-
-                        <div class="note-card" style="margin-top: 1rem;">
-                            <h3 class="section-header">Load Balancing</h3>
-                            <p>Distributing traffic across multiple servers.</p>
-                            <p class="analogy">👮 <strong>Analogy:</strong> A traffic cop or receptionist directing a long line of people into 5 different open counters so no single counter gets overwhelmed.</p>
-                        </div>
-
-                        <div class="note-card" style="margin-top: 1rem;">
-                            <h3 class="section-header">CAP Theorem (Practical View)</h3>
-                            <p>Pick 2: <strong>Consistency, Availability, Partition Tolerance</strong>.</p>
-                            <p class="analogy">🗣️ <strong>Analogy:</strong> Two people on phones (Nodes) trying to agree on a meeting time (Data). <br><strong>Partition (P):</strong> The call drops.<br><strong>CP (Consistency):</strong> You stop talking because you can't confirm the time (System Errors out).<br><strong>AP (Availability):</strong> You guess a time just to keep the conversation going, risking showing up at different times (Data Mismatch).</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 3. Backend & API -->
-                <div id="backend" class="summary-section fade-in">
-                    <div class="card">
-                        <h2>3. Backend & API Design</h2>
-                        
-                        <div class="grid-2">
-                            <div class="note-card">
-                                <h3>Stateful vs. Stateless</h3>
-                                <p><strong>Stateless</strong> is essential for scaling.</p>
-                                <p class="analogy">🏨 <strong>Analogy:</strong> <br><strong>Stateful:</strong> The hotel receptionist remembers you personally. If she goes on break, the new receptionist doesn't know who you are.<br><strong>Stateless:</strong> You have a Room Key (Token). Any receptionist can scan it and help you.</p>
-                            </div>
-                            <div class="note-card">
-                                <h3>Rate Limiting</h3>
-                                <p>Protect your API from abuse.</p>
-                                <p class="analogy">🎟️ <strong>Analogy:</strong> A bouncer at a club only letting 5 people in per minute, telling the rest to wait.</p>
+                            <div class="grid-2">
+                                <div class="note-card">
+                                    <h3 class="section-header">R -
+                                        Requirements</h3>
+                                    <p><strong>Functional:</strong> What does
+                                        the system DO?</p>
+                                    <p><strong>Non-Functional (NFRs):</strong>
+                                        Consistency, Availability.</p>
+                                    <p class="analogy">🍕
+                                        <strong>Analogy:</strong> Like ordering
+                                        a Pizza. <br>Functional:
+                                        "I want Pepperoni." <br>Non-Functional:
+                                        "It must arrive in 30 mins (Latency) and be hot (Quality)."
+                                    </p>
+                                </div>
+                                <div class="note-card">
+                                    <h3 class="section-header">A -
+                                        Architecture</h3>
+                                    <p>Draw the "Happy Path" first.</p>
+                                    <p>Client → Load Balancer → API → Service →
+                                        DB.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- 4. Data Layer -->
-                <div id="data" class="summary-section fade-in">
-                    <div class="card">
-                        <h2>4. Data Layer</h2>
-                        
-                        <div class="note-card">
-                            <h3 class="section-header">Sharding</h3>
-                            <p>Splitting data across multiple servers.</p>
-                            <p class="analogy">📚 <strong>Analogy:</strong> A library is too big for one room. You put books A-M in the East Wing (Server 1) and N-Z in the West Wing (Server 2). <br><em>Downside:</em> If you need a book from A and a book from Z, you have to run between two rooms (Complex Transactions).</p>
-                        </div>
+                    <!-- 2. Core Concepts -->
+                    <div id="concepts" class="summary-section fade-in">
+                        <div class="card">
+                            <h2>2. Core Concepts: Beyond Buzzwords</h2>
 
-                        <div class="grid-2" style="margin-top: 1rem;">
                             <div class="note-card">
-                                <h4>SQL (Relational)</h4>
-                                <p>Structured, Rigid.</p>
-                                <p class="analogy">🗄️ <strong>Analogy:</strong> An Excel sheet where every row must have the exact same columns and data types.</p>
+                                <h3 class="section-header">Scalability vs.
+                                    Performance</h3>
+                                <ul class="styled-list">
+                                    <li><strong>Performance:</strong> Speed of a
+                                        single unit.</li>
+                                    <li><strong>Scalability:</strong> Handling
+                                        more load.</li>
+                                </ul>
+                                <p class="analogy">☕ <strong>Analogy:</strong>
+                                    <br><strong>Performance:</strong> Training a
+                                    barista to make espresso in 10s instead of
+                                    30s. <br><strong>Scalability:</strong>
+                                    Hiring 5 more baristas to serve 500
+                                    customers.
+                                </p>
                             </div>
-                            <div class="note-card">
-                                <h4>NoSQL (Non-Relational)</h4>
-                                <p>Flexible, Fast.</p>
-                                <p class="analogy">📦 <strong>Analogy:</strong> A bucket where you can throw in a document, a photo, or a note without sorting them.</p>
+
+                            <div class="note-card" style="margin-top: 1rem;">
+                                <h3 class="section-header">Load Balancing</h3>
+                                <p>Distributing traffic across multiple
+                                    servers.</p>
+                                <p class="analogy">👮 <strong>Analogy:</strong>
+                                    A traffic cop or receptionist directing a
+                                    long line of people into 5 different open
+                                    counters so no single counter gets
+                                    overwhelmed.</p>
+                            </div>
+
+                            <div class="note-card" style="margin-top: 1rem;">
+                                <h3 class="section-header">CAP Theorem
+                                    (Practical View)</h3>
+                                <p>Pick 2: <strong>Consistency, Availability,
+                                        Partition Tolerance</strong>.</p>
+                                <p class="analogy">🗣️ <strong>Analogy:</strong>
+                                    Two people on phones (Nodes) trying to agree
+                                    on a meeting time (Data).
+                                    <br><strong>Partition (P):</strong> The call
+                                    drops.<br><strong>CP (Consistency):</strong>
+                                    You stop talking because you can't confirm
+                                    the time (System Errors out).<br><strong>AP
+                                        (Availability):</strong> You guess a
+                                    time just to keep the conversation going,
+                                    risking showing up at different times (Data
+                                    Mismatch).
+                                </p>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- 5. Caching -->
-                <div id="caching" class="summary-section fade-in">
-                    <div class="card">
-                        <h2>5. Caching Strategies</h2>
-                        
-                        <div class="note-card">
-                            <h3>What is Caching?</h3>
-                            <p>Storing copies of data in fast memory.</p>
-                            <p class="analogy">🎒 <strong>Analogy:</strong> <br><strong>Database:</strong> The Library (Takes 30 mins to find info).<br><strong>Cache:</strong> Your Backpack (Takes 2 seconds to grab the book you already checked out).</p>
-                        </div>
-                    </div>
-                </div>
+                    <!-- 3. Backend & API -->
+                    <div id="backend" class="summary-section fade-in">
+                        <div class="card">
+                            <h2>3. Backend & API Design</h2>
 
-                <!-- 6. Async -->
-                <div id="async" class="summary-section fade-in">
-                    <div class="card">
-                        <h2>6. Async & Distributed Systems</h2>
-                        
-                        <div class="note-card">
-                            <h3>Message Queues</h3>
-                            <p>Decouple components and smooth out traffic spikes.</p>
-                            <p class="analogy">🍽️ <strong>Analogy:</strong> A Restaurant Kitchen.<br>The waiter (API) takes 50 orders instantly. The chefs (Workers) cook them one by one. The Ticket Rail is the <strong>Queue</strong>. It prevents the chefs from being overwhelmed by a rush of customers.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 8. Observability -->
-                <div id="observability" class="summary-section fade-in">
-                    <div class="card">
-                        <h2>8. Observability (The 3 Pillars)</h2>
-                        <div class="grid-2">
-                            <div class="note-card">
-                                <strong>1. Metrics</strong><br>
-                                "What is happening?"<br>
-                                <em class="analogy">🚗 Speedometer</em>
-                            </div>
-                            <div class="note-card">
-                                <strong>2. Logging</strong><br>
-                                "Why is it happening?"<br>
-                                <em class="analogy">📓 Diary / Black Box</em>
+                            <div class="grid-2">
+                                <div class="note-card">
+                                    <h3>Stateful vs. Stateless</h3>
+                                    <p><strong>Stateless</strong> is essential
+                                        for scaling.</p>
+                                    <p class="analogy">🏨
+                                        <strong>Analogy:</strong>
+                                        <br><strong>Stateful:</strong> The hotel
+                                        receptionist remembers you personally.
+                                        If she goes on break, the new
+                                        receptionist doesn't know who you
+                                        are.<br><strong>Stateless:</strong> You
+                                        have a Room Key (Token). Any
+                                        receptionist can scan it and help
+                                        you.
+                                    </p>
+                                </div>
+                                <div class="note-card">
+                                    <h3>Rate Limiting</h3>
+                                    <p>Protect your API from abuse.</p>
+                                    <p class="analogy">🎟️
+                                        <strong>Analogy:</strong> A bouncer at a
+                                        club only letting 5 people in per
+                                        minute, telling the rest to wait.
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                         <div class="note-card">
-                            <strong>3. Tracing</strong><br>
-                            "Where is it happening?"<br>
-                            <em class="analogy">🕵️ Following the driver's GPS route</em>
+                    </div>
+
+                    <!-- 4. Data Layer -->
+                    <div id="data" class="summary-section fade-in">
+                        <div class="card">
+                            <h2>4. Data Layer</h2>
+
+                            <div class="note-card">
+                                <h3 class="section-header">Sharding</h3>
+                                <p>Splitting data across multiple servers.</p>
+                                <p class="analogy">📚 <strong>Analogy:</strong>
+                                    A library is too big for one room. You put
+                                    books A-M in the East Wing (Server 1) and
+                                    N-Z in the West Wing (Server 2).
+                                    <br><em>Downside:</em> If you need a book
+                                    from A and a book from Z, you have to run
+                                    between two rooms (Complex
+                                    Transactions).
+                                </p>
+                            </div>
+
+                            <div class="grid-2" style="margin-top: 1rem;">
+                                <div class="note-card">
+                                    <h4>SQL (Relational)</h4>
+                                    <p>Structured, Rigid.</p>
+                                    <p class="analogy">🗄️
+                                        <strong>Analogy:</strong> An Excel sheet
+                                        where every row must have the exact same
+                                        columns and data types.
+                                    </p>
+                                </div>
+                                <div class="note-card">
+                                    <h4>NoSQL (Non-Relational)</h4>
+                                    <p>Flexible, Fast.</p>
+                                    <p class="analogy">📦
+                                        <strong>Analogy:</strong> A bucket where
+                                        you can throw in a document, a photo, or
+                                        a note without sorting them.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div id="scenarios" style="text-align: center; margin-top: 4rem; margin-bottom: 4rem;" class="fade-in">
-                    <h2>Ready for the Real World?</h2>
-                    <p style="margin-bottom: 1.5rem;">The quiz below uses real-life scenarios to test your engineering intuition.</p>
-                    <a href="quiz.html" class="btn">Take the Scenario Quiz</a>
-                </div>
+                    <!-- 5. Caching -->
+                    <div id="caching" class="summary-section fade-in">
+                        <div class="card">
+                            <h2>5. Caching Strategies</h2>
 
-            </main>
+                            <div class="note-card">
+                                <h3>What is Caching?</h3>
+                                <p>Storing copies of data in fast memory.</p>
+                                <p class="analogy">🎒 <strong>Analogy:</strong>
+                                    <br><strong>Database:</strong> The Library
+                                    (Takes 30 mins to find
+                                    info).<br><strong>Cache:</strong> Your
+                                    Backpack (Takes 2 seconds to grab the book
+                                    you already checked out).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6. Async -->
+                    <div id="async" class="summary-section fade-in">
+                        <div class="card">
+                            <h2>6. Async & Distributed Systems</h2>
+
+                            <div class="note-card">
+                                <h3>Message Queues</h3>
+                                <p>Decouple components and smooth out traffic
+                                    spikes.</p>
+                                <p class="analogy">🍽️ <strong>Analogy:</strong>
+                                    A Restaurant Kitchen.<br>The waiter (API)
+                                    takes 50 orders instantly. The chefs
+                                    (Workers) cook them one by one. The Ticket
+                                    Rail is the <strong>Queue</strong>. It
+                                    prevents the chefs from being overwhelmed by
+                                    a rush of customers.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 8. Observability -->
+                    <div id="observability" class="summary-section fade-in">
+                        <div class="card">
+                            <h2>8. Observability (The 3 Pillars)</h2>
+                            <div class="grid-2">
+                                <div class="note-card">
+                                    <strong>1. Metrics</strong><br>
+                                    "What is happening?"<br>
+                                    <em class="analogy">🚗 Speedometer</em>
+                                </div>
+                                <div class="note-card">
+                                    <strong>2. Logging</strong><br>
+                                    "Why is it happening?"<br>
+                                    <em class="analogy">📓 Diary / Black
+                                        Box</em>
+                                </div>
+                            </div>
+                            <div class="note-card">
+                                <strong>3. Tracing</strong><br>
+                                "Where is it happening?"<br>
+                                <em class="analogy">🕵️ Following the driver's
+                                    GPS route</em>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="scenarios"
+                        style="text-align: center; margin-top: 4rem; margin-bottom: 4rem;"
+                        class="fade-in">
+                        <h2>Ready for the Real World?</h2>
+                        <p style="margin-bottom: 1.5rem;">The quiz below uses
+                            real-life scenarios to test your engineering
+                            intuition.</p>
+                        <a href="quiz.html" class="btn">Take the Scenario
+                            Quiz</a>
+                    </div>
+
+                </main>
+            </div>
         </div>
-    </div>
 
-    <script src="js/main.js"></script>
+        <script src="js/main.js"></script>
 
-    <script>
+        <script>
         // Tab Navigation Logic
         function initTabs() {
             const navItems = document.querySelectorAll('.course-nav-item');
@@ -236,11 +334,11 @@
                 // Update Nav State
                 navItems.forEach(item => {
                     item.classList.remove('active');
-                    if(item.getAttribute('href') === '#' + targetId) {
+                    if (item.getAttribute('href') === '#' + targetId) {
                         item.classList.add('active');
                     }
                 });
-                
+
                 // Scroll to top of content
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
@@ -262,9 +360,35 @@
                 showSection('intro');
             }
         }
+        const container = document.getElementById("videoContainer");
+        const hostname = window.location.hostname;
+
+        if (hostname === "kzedu.test") {
+            // Local video
+            container.innerHTML = `
+              <video controls style="width: 100%;">
+                <source src="System Design Concepts Course and Interview Prep.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            `;
+        } else {
+            // YouTube iframe
+            container.innerHTML = `
+              <iframe
+                width="100%"
+                height="450"
+                src="https://www.youtube.com/embed/F2FmTdLtb_4"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+            `;
+        }
 
         // Init
         document.addEventListener('DOMContentLoaded', initTabs);
     </script>
-</body>
+    </body>
+
 </html>

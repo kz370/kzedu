@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Complete System Design Course - KZEDU</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet">
+    </head>
+
+    <body>
+
+        <div class="container">
+            <header>
+                <div class="logo">
+                    <h3><a href="../index.html"
+                            style="text-decoration:none; color:white;">KZEDU</a>
+                        / System Design</h3>
+                </div>
+                <nav>
+                    <a href="index.html">Back to Topic</a>
+                </nav>
+            </header>
+
+            <section class="hero fade-in">
+                <h1>Complete System Design Course</h1>
+                <p>From Core Concepts to Real-World Interview Prep</p>
+            </section>
+
+            <div class="course-layout">
+                <!-- Sidebar Navigation -->
+                <aside class="course-sidebar fade-in">
+                    <h3>Course Outline</h3>
+                    <nav class="course-nav">
+                        <a href="#intro" class="course-nav-item active">🎥 Video
+                            Lecture</a>
+                        <a href="#chapter1" class="course-nav-item">📡 Chapter I:
+                            Fundamentals</a>
+                        <a href="#chapter2" class="course-nav-item">💾 Chapter II:
+                            Databases</a>
+                        <a href="#chapter3" class="course-nav-item">🔧 Chapter III:
+                            Architecture</a>
+                        <a href="#chapter4" class="course-nav-item">🛡️ Chapter IV:
+                            Advanced Topics</a>
+                        <a href="#chapter5" class="course-nav-item">🏢 Chapter V:
+                            Case Studies</a>
+                        <a href="#interview" class="course-nav-item">💼 Interview
+                            Framework</a>
+                        <a href="#scenarios" class="course-nav-item">✅ Quiz</a>
+                    </nav>
+                </aside>
+
+                <!-- Main Content -->
+                <main class="course-content">
+
+                    <!-- Video Section -->
+                    <div id="intro" class="summary-section fade-in">
+                        <h2 style="margin-bottom: 1rem;">Video Lecture</h2>
+                        <div class="video-container" id="videoContainer"></div>
+                    </div>
+
+                    <!-- Chapter I: Fundamentals -->
+                    <div id="chapter1" class="summary-section fade-in">
+                        <div class="card">
+                            <h2>Chapter I: System Design Fundamentals</h2>
+                            <p style="margin-bottom: 1.5rem; opacity: 0.8;">Core concepts every system designer must know.</p>
+
+                            <div class="note-card">
+                                <h3 class="section-header">🌐 IP & Networking</h3>
+                                <p><strong>IP Address:</strong> Unique identifier for devices on a network.</p>
+                                <p class="analogy">🏠 <strong>Think:</strong> "Every device needs a unique address, just like every house needs a street address for mail delivery."</p>
+                                <ul class="styled-list">
+                                    <li><strong>IPv4:</strong> 32-bit (e.g., 192.168.1.1) - ~4 billion addresses</li>
+                                    <li><strong>IPv6:</strong> 128-bit (e.g., 2001:0db8:...) - virtually unlimited</li>
+                                    <li><strong>Public/Private:</strong> External vs internal network addresses</li>
+                                    <li><strong>Static/Dynamic:</strong> Fixed vs DHCP-assigned addresses</li>
+                                </ul>
+                                <div style="background: rgba(255,255,255,0.05); padding: 0.75rem; border-radius: 6px; margin-top: 0.75rem;">
+                                    <p style="margin-bottom: 0.5rem;"><strong>📌 Real-World Examples:</strong></p>
+                                    <ul class="styled-list" style="margin-bottom: 0;">
+                                        <li><strong>Public IP:</strong> Like your home's street address that Amazon uses to deliver packages. Anyone can find it.</li>
+                                        <li><strong>Private IP:</strong> Like apartment numbers inside a building. Only useful within that building (your home network).</li>
+                                        <li><strong>Static IP:</strong> A business always at the same location (e.g., a bank branch). Customers can always find it.</li>
+                                        <li><strong>Dynamic IP:</strong> Like a food truck that gets a new parking spot each day. Flexible but changes location.</li>
+                                    </ul>
+                                    <p style="margin-top: 0.75rem; font-style: italic; opacity: 0.8;"><strong>Result:</strong> Every device can be uniquely identified and reached, enabling communication across the internet.</p>
+                                </div>
+                            </div>
+
+                            <div class="note-card" style="margin-top: 1rem;">
+                                <h3 class="section-header">📚 OSI Model (7 Layers)</h3>
+                                <p>Universal language for computer networking:</p>
+                                <p class="analogy">📬 <strong>Think:</strong> "Like sending a letter: you write it (Application), translate it (Presentation), track it (Session), ship it (Transport), route it (Network), hand it off (Data Link), and physically carry it (Physical)."</p>
+                                <ul class="styled-list">
+                                    <li><strong>Application:</strong> HTTP, SMTP - user-facing protocols</li>
+                                    <li><strong>Presentation:</strong> Encryption, compression, translation</li>
+                                    <li><strong>Session:</strong> Connection management, checkpoints</li>
+                                    <li><strong>Transport:</strong> TCP/UDP - end-to-end delivery</li>
+                                    <li><strong>Network:</strong> IP routing, packet forwarding</li>
+                                    <li><strong>Data Link:</strong> MAC addresses, frames</li>
+                                    <li><strong>Physical:</strong> Cables, signals, hardware</li>
+                                </ul>
+                                <div style="background: rgba(255,255,255,0.05); padding: 0.75rem; border-radius: 6px; margin-top: 0.75rem;">
+                                    <p style="margin-bottom: 0.5rem;"><strong>📌 Real-World Examples:</strong></p>
+                                    <ul class="styled-list" style="margin-bottom: 0;">
+                                        <li><strong>Application Layer:</strong> You open Gmail to send an email (this is what you interact with).</li>
+                                        <li><strong>Transport Layer:</strong> Gmail breaks your email into packets and ensures all pieces arrive.</li>
+                                        <li><strong>Network Layer:</strong> Your router decides the best path to reach the recipient's server.</li>
+                                        <li><strong>Physical Layer:</strong> The actual fiber optic cables and WiFi signals carrying your data.</li>
+                                    </ul>
+                                    <p style="margin-top: 0.75rem; font-style: italic; opacity: 0.8;"><strong>Result:</strong> Data travels reliably from your app to its destination, passing through each layer's responsibilities.</p>
+                                </div>
+                            </div>
+
+                            <div class="grid-2" style="margin-top: 1rem;">
+                                <div class="note-card">
+                                    <h4>TCP (Transmission Control Protocol)</h4>
+                                    <p>Connection-oriented, reliable delivery.</p>
+                                    <p class="analogy">📞 <strong>Think:</strong> "I won't move on until I hear you received my message."</p>
+                                    <p class="analogy">📞 <strong>Analogy:</strong> Like a phone call - you establish connection, confirm received messages, and hang up properly.</p>
+                                    <p><em>Use for:</em> HTTP, email, file transfer</p>
+                                    <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                                        <p style="margin: 0; font-size: 0.9rem;"><strong>📌 Example:</strong> Online banking - every transaction must be confirmed. If you transfer $100, the bank ensures you get a receipt before completing.</p>
+                                    </div>
+                                </div>
+                                <div class="note-card">
+                                    <h4>UDP (User Datagram Protocol)</h4>
+                                    <p>Connectionless, fast but unreliable.</p>
+                                    <p class="analogy">🎯 <strong>Think:</strong> "Send it fast! If some gets lost, no big deal."</p>
+                                    <p class="analogy">📮 <strong>Analogy:</strong> Like sending postcards - no confirmation, might get lost, but fast!</p>
+                                    <p><em>Use for:</em> Video streaming, gaming, DNS</p>
+                                    <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                                        <p style="margin: 0; font-size: 0.9rem;"><strong>📌 Example:</strong> Zoom calls - if a few video frames drop, you'd rather have smooth conversation than pausing to retransmit every lost packet.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="note-card" style="margin-top: 1rem;">
+                                <h3 class="section-header">🔗 DNS (Domain Name System)</h3>
+                                <p>Translates human-readable domains to IP addresses.</p>
+                                <p class="analogy">📖 <strong>Think:</strong> "I remember names, not numbers. DNS translates for me."</p>
+                                <p class="analogy">📖 <strong>Analogy:</strong> DNS is like a phone book. You look up "google.com" and get the IP address to call.</p>
+                                <p><strong>Key Record Types:</strong></p>
+                                <ul class="styled-list">
+                                    <li><strong>A:</strong> Maps domain to IPv4 address</li>
+                                    <li><strong>AAAA:</strong> Maps domain to IPv6 address</li>
+                                    <li><strong>CNAME:</strong> Alias to another domain</li>
+                                    <li><strong>MX:</strong> Mail server records</li>
+                                    <li><strong>NS:</strong> Name server records</li>
+                                </ul>
+                                <div style="background: rgba(255,255,255,0.05); padding: 0.75rem; border-radius: 6px; margin-top: 0.75rem;">
+                                    <p style="margin-bottom: 0.5rem;"><strong>📌 Real-World Examples:</strong></p>
+                                    <ul class="styled-list" style="margin-bottom: 0;">
+                                        <li><strong>A Record:</strong> When you type "google.com", DNS returns 142.250.80.46. Like asking "Where does John live?" and getting his street address.</li>
+                                        <li><strong>CNAME:</strong> "www.mysite.com" points to "mysite.com". Like saying "Ask for Bob or Robert - same person."</li>
+                                        <li><strong>MX Record:</strong> When you email user@company.com, DNS tells the sender which server handles Company's mail. Like a post office knowing which branch handles which zip codes.</li>
+                                    </ul>
+                                    <p style="margin-top: 0.75rem; font-style: italic; opacity: 0.8;"><strong>Result:</strong> Users type friendly names; computers find the right IP address automatically.</p>
+                                </div>
+                            </div>
+
+                            <div class="note-card" style="margin-top: 1rem;">
+                                <h3 class="section-header">⚖️ Load Balancing</h3>
+                                <p>Distributes traffic across multiple servers.</p>
+                                <p class="analogy">👮 <strong>Think:</strong> "Don't let one cashier handle all customers while others stand idle."</p>
+                                <p class="analogy">👮 <strong>Analogy:</strong> A traffic cop directing cars into different lanes to prevent traffic jams.</p>
+                                <p><strong>Algorithms:</strong></p>
+                                <ul class="styled-list">
+                                    <li><strong>Round Robin:</strong> Sequential rotation</li>
+                                    <li><strong>Least Connections:</strong> Route to least busy server</li>
+                                    <li><strong>IP Hash:</strong> Same client → same server</li>
+                                    <li><strong>Weighted:</strong> Consider server capacity</li>
+                                </ul>
+                                <div style="background: rgba(255,255,255,0.05); padding: 0.75rem; border-radius: 6px; margin-top: 0.75rem;">
+                                    <p style="margin-bottom: 0.5rem;"><strong>📌 Real-World Examples:</strong></p>
+                                    <ul class="styled-list" style="margin-bottom: 0;">
+                                        <li><strong>Round Robin:</strong> McDonald's with 3 registers - customer 1 goes to register 1, customer 2 to register 2, customer 3 to register 3, customer 4 back to register 1.</li>
+                                        <li><strong>Least Connections:</strong> Airport security - you go to the line with fewest people waiting.</li>
+                                        <li><strong>IP Hash:</strong> Shopping cart persistence - you always return to the same cashier who remembers your order.</li>
+                                        <li><strong>Weighted:</strong> A senior employee handles complex tasks; junior employees handle simple ones.</li>
+                                    </ul>
+                                    <p style="margin-top: 0.75rem; font-style: italic; opacity: 0.8;"><strong>Result:</strong> No single server is overloaded; faster response for all users.</p>
+                                </div>
+                            </div>
+
+                            <div class="grid-2" style="margin-top: 1rem;">
+                                <div class="note-card">
+                                    <h4>🔼 Vertical Scaling</h4>
+                                    <p>Upgrade existing hardware (more RAM, CPU).</p>
+                                    <p class="analogy">💪 <strong>Think:</strong> "Make the one machine more powerful."</p>
+                                    <p class="analogy">💪 <strong>Analogy:</strong> Making one person stronger vs hiring more people.</p>
+                                    <p><em>Limit:</em> Hardware has maximum capacity.</p>
+                                    <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                                        <p style="margin: 0; font-size: 0.9rem;"><strong>📌 Example:</strong> Upgrading your laptop from 8GB to 32GB RAM. Quick fix, but eventually you hit the maximum that fits in the laptop.</p>
+                                        <p style="margin-top: 0.5rem; font-style: italic; opacity: 0.8;"><strong>Gain:</strong> Simple, no code changes. <strong>Lose:</strong> Limited ceiling, single point of failure.</p>
+                                    </div>
+                                </div>
+                                <div class="note-card">
+                                    <h4>↔️ Horizontal Scaling</h4>
+                                    <p>Add more machines to the pool.</p>
+                                    <p class="analogy">👥 <strong>Think:</strong> "Add more workers to share the load."</p>
+                                    <p class="analogy">👥 <strong>Analogy:</strong> Hiring more workers instead of making one work harder.</p>
+                                    <p><em>Benefit:</em> Virtually unlimited scale.</p>
+                                    <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                                        <p style="margin: 0; font-size: 0.9rem;"><strong>📌 Example:</strong> Instead of one pizza maker handling 100 orders, hire 10 pizza makers who each handle 10 orders.</p>
+                                        <p style="margin-top: 0.5rem; font-style: italic; opacity: 0.8;"><strong>Gain:</strong> Unlimited growth potential. <strong>Lose:</strong> More complexity in coordination.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="note-card" style="margin-top: 1rem;">
+                                <h3 class="section-header">🗂️ Caching</h3>
+                                <p>Storing frequently accessed data in fast memory.</p>
+                                <p class="analogy">🎒 <strong>Think:</strong> "Keep your most-used items within arm's reach."</p>
+                                <p class="analogy">🎒 <strong>Analogy:</strong><br><strong>Database:</strong> Library (slow search).<br><strong>Cache:</strong> Your backpack with frequently used books.</p>
+                                <p><strong>Eviction Policies:</strong></p>
+                                <ul class="styled-list">
+                                    <li><strong>LRU:</strong> Least Recently Used - most common</li>
+                                    <li><strong>LFU:</strong> Least Frequently Used</li>
+                                    <li><strong>FIFO:</strong> First In, First Out</li>
+                                </ul>
+                                <p><strong>Cache Patterns:</strong></p>
+                                <ul class="styled-list">
+                                    <li><strong>Cache-Aside:</strong> App checks cache → miss → fetch from DB → update cache</li>
+                                    <li><strong>Write-Through:</strong> Write to cache AND DB simultaneously</li>
+                                    <li><strong>Write-Back:</strong> Write to cache, async sync to DB</li>
+                                </ul>
+                                <div style="background: rgba(255,255,255,0.05); padding: 0.75rem; border-radius: 6px; margin-top: 0.75rem;">
+                                    <p style="margin-bottom: 0.5rem;"><strong>📌 Real-World Examples:</strong></p>
+                                    <ul class="styled-list" style="margin-bottom: 0;">
+                                        <li><strong>Browser Cache:</strong> When you revisit a website, images load instantly because your browser saved them locally.</li>
+                                        <li><strong>LRU:</strong> Your phone auto-closes apps you haven't used recently to free memory for new apps.</li>
+                                        <li><strong>Cache-Aside:</strong> Netflix: check local cache for movie info → if not found, fetch from database → store locally for next time.</li>
+                                        <li><strong>Write-Through:</strong> Updating your profile photo on Facebook - shown immediately AND saved permanently.</li>
+                                    </ul>
+                                    <p style="margin-top: 0.75rem; font-style: italic; opacity: 0.8;"><strong>Gain:</strong> Blazing-fast responses, reduced database load. <strong>Lose:</strong> Cache can become stale (outdated).</p>
+                                </div>
+                            </div>
+
+                            <div class="note-card" style="margin-top: 1rem;">
+                                <h3 class="section-header">🌍 Content Delivery Network (CDN)</h3>
+                                <p>Geographically distributed servers for fast content delivery.</p>
+                                <p class="analogy">🏪 <strong>Think:</strong> "Bring the content closer to the user instead of making them travel far."</p>
+                                <p class="analogy">🏪 <strong>Analogy:</strong> Instead of one central warehouse, having stores in every city for faster pickup.</p>
+                                <p><strong>Types:</strong></p>
+                                <ul class="styled-list">
+                                    <li><strong>Push CDN:</strong> You upload content to CDN when it changes</li>
+                                    <li><strong>Pull CDN:</strong> CDN fetches and caches on first request</li>
+                                </ul>
+                                <p><em>Examples:</em> CloudFront, Cloudflare, Akamai</p>
+                                <div style="background: rgba(255,255,255,0.05); padding: 0.75rem; border-radius: 6px; margin-top: 0.75rem;">
+                                    <p style="margin-bottom: 0.5rem;"><strong>📌 Real-World Examples:</strong></p>
+                                    <ul class="styled-list" style="margin-bottom: 0;">
+                                        <li><strong>Netflix:</strong> Movies are stored on servers near you (in your city/country), so streaming starts instantly rather than waiting for data from the US.</li>
+                                        <li><strong>Push CDN:</strong> Apple uploads new iOS images to all CDN servers worldwide before announcing a new iPhone.</li>
+                                        <li><strong>Pull CDN:</strong> First person in Tokyo visits your website → CDN fetches from US server → caches locally. Next Tokyo user gets instant load.</li>
+                                    </ul>
+                                    <p style="margin-top: 0.75rem; font-style: italic; opacity: 0.8;"><strong>Gain:</strong> Faster load times, reduced origin server load. <strong>Lose:</strong> Slightly stale content if cache isn't refreshed.</p>
+                                </div>
+                            </div>
+
+                            <div class="note-card" style="margin-top: 1rem;">
+                                <h3 class="section-header">🔄 Proxy Servers</h3>
+                                <p class="analogy">🛡️ <strong>Think:</strong> "A middleman that handles requests on behalf of someone else."</p>
+                                <div class="grid-2">
+                                    <div>
+                                        <h4>Forward Proxy</h4>
+                                        <p>Sits in front of <strong>clients</strong>.</p>
+                                        <p><em>Use:</em> Anonymity, content filtering, access control</p>
+                                        <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                                            <p style="margin: 0; font-size: 0.9rem;"><strong>📌 Example:</strong> Corporate firewall - employees browse the web through a company proxy that blocks social media and logs activity.</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4>Reverse Proxy</h4>
+                                        <p>Sits in front of <strong>servers</strong>.</p>
+                                        <p><em>Use:</em> Load balancing, SSL termination, caching</p>
+                                        <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                                            <p style="margin: 0; font-size: 0.9rem;"><strong>📌 Example:</strong> Hotel concierge - guests ask the concierge (reverse proxy) who then contacts the restaurant, spa, or driver (backend servers) on their behalf.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="note-card" style="margin-top: 1rem;">
+                                <h3 class="section-header">📊 Availability (The Nines)</h3>
+                                <p class="analogy">⏱️ <strong>Think:</strong> "How many 9s? The more 9s, the less downtime allowed."</p>
+                                <table style="width:100%; border-collapse:collapse; margin-top:0.5rem;">
+                                    <tr style="background: rgba(255,255,255,0.1);">
+                                        <th style="padding:0.5rem; text-align:left;">Availability</th>
+                                        <th style="padding:0.5rem; text-align:left;">Downtime/Year</th>
+                                    </tr>
+                                    <tr><td style="padding:0.3rem;">99% (two 9s)</td><td style="padding:0.3rem;">~3.65 days</td></tr>
+                                    <tr><td style="padding:0.3rem;">99.9% (three 9s)</td><td style="padding:0.3rem;">~8.77 hours</td></tr>
+                                    <tr><td style="padding:0.3rem;">99.99% (four 9s)</td><td style="padding:0.3rem;">~52.6 minutes</td></tr>
+                                    <tr><td style="padding:0.3rem;">99.999% (five 9s)</td><td style="padding:0.3rem;">~5.25 minutes</td></tr>
+                                </table>
+                                <div style="background: rgba(255,255,255,0.05); padding: 0.75rem; border-radius: 6px; margin-top: 0.75rem;">
+                                    <p style="margin-bottom: 0.5rem;"><strong>📌 Real-World Examples:</strong></p>
+                                    <ul class="styled-list" style="margin-bottom: 0;">
+                                        <li><strong>99% (Blog):</strong> Personal blog can be down for a few days yearly - readers will wait.</li>
+                                        <li><strong>99.9% (E-commerce):</strong> Online store - 8 hours down means lost sales, but recoverable.</li>
+                                        <li><strong>99.99% (Banking):</strong> ATM network - 52 minutes of yearly downtime is tolerable with backups.</li>
+                                        <li><strong>99.999% (Emergency Services, Cloud):</strong> 911 systems or AWS - every second counts, nearly zero tolerance.</li>
+                                    </ul>
+                                    <p style="margin-top: 0.75rem; font-style: italic; opacity: 0.8;"><strong>Gain:</strong> More 9s = higher trust and reliability. <strong>Lose:</strong> Exponentially more expensive to achieve each additional 9.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chapter II: Databases -->
+                    <div id="chapter2" class="summary-section fade-in">
+                        <div class="card">
+                            <h2>Chapter II: Databases & Data Management</h2>
+                            <p style="margin-bottom: 1.5rem; opacity: 0.8;">Data storage, replication, and partitioning strategies.</p>
+
+                            <div class="grid-2">
+                                <div class="note-card">
+                                    <h3>SQL (Relational)</h3>
+                                    <p>Structured, ACID compliant, schema-based.</p>
+                                    <p class="analogy">🗄️ <strong>Think:</strong> "Strict rules, guaranteed correctness."</p>
+                                    <p class="analogy">🗄️ <strong>Analogy:</strong> Excel spreadsheet with strict columns and data types.</p>
+                                    <p><em>Best for:</em> Complex queries, transactions, relationships</p>
+                                    <p><em>Examples:</em> PostgreSQL, MySQL, Oracle</p>
+                                    <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                                        <p style="margin: 0; font-size: 0.9rem;"><strong>📌 Example:</strong> Banking systems - you need guarantees that $100 leaves Account A and arrives in Account B. No half-done transfers!</p>
+                                    </div>
+                                </div>
+                                <div class="note-card">
+                                    <h3>NoSQL (Non-Relational)</h3>
+                                    <p>Flexible, BASE model, schema-less.</p>
+                                    <p class="analogy">📦 <strong>Think:</strong> "Flexible and fast, even if not perfect right away."</p>
+                                    <p class="analogy">📦 <strong>Analogy:</strong> A bucket where you throw in documents, photos, or notes freely.</p>
+                                    <p><em>Best for:</em> Scalability, unstructured data, rapid iteration</p>
+                                    <p><em>Types:</em> Document, Key-Value, Graph, Column</p>
+                                    <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                                        <p style="margin: 0; font-size: 0.9rem;"><strong>📌 Example:</strong> Social media posts - each post can have different fields (some have images, some have polls). Perfect for MongoDB.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="note-card" style="margin-top: 1rem;">
+                                <h3 class="section-header">🔵 ACID vs BASE</h3>
+                                <p class="analogy">⚖️ <strong>Think:</strong> "ACID = Strict and safe. BASE = Flexible and fast."</p>
+                                <div class="grid-2">
+                                    <div>
+                                        <h4>ACID (SQL)</h4>
+                                        <ul class="styled-list">
+                                            <li><strong>Atomicity:</strong> All or nothing</li>
+                                            <li><strong>Consistency:</strong> Valid state always</li>
+                                            <li><strong>Isolation:</strong> Concurrent safety</li>
+                                            <li><strong>Durability:</strong> Survives failures</li>
+                                        </ul>
+                                        <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                                            <p style="margin: 0; font-size: 0.9rem;"><strong>📌 Example:</strong> ATM withdrawal - if the machine crashes, either money is dispensed AND your account is debited, or neither happens. Never in-between.</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4>BASE (NoSQL)</h4>
+                                        <ul class="styled-list">
+                                            <li><strong>Basically Available:</strong> System works most of the time</li>
+                                            <li><strong>Soft State:</strong> State may change over time</li>
+                                            <li><strong>Eventually Consistent:</strong> Will sync eventually</li>
+                                        </ul>
+                                        <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                                            <p style="margin: 0; font-size: 0.9rem;"><strong>📌 Example:</strong> Instagram likes - your friend sees 999 likes, you see 1000. Eventually both will show 1000. Slight delay is OK.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="note-card" style="margin-top: 1rem;">
+                                <h3 class="section-header">⚠️ CAP Theorem</h3>
+                                <p class="analogy">🎯 <strong>Think:</strong> "You can only have 2 out of 3 guarantees in a distributed system."</p>
+                                <p>In distributed systems, pick 2 of 3:</p>
+                                <ul class="styled-list">
+                                    <li><strong>Consistency:</strong> All nodes see same data</li>
+                                    <li><strong>Availability:</strong> Every request gets a response</li>
+                                    <li><strong>Partition Tolerance:</strong> Works despite network failures</li>
+                                </ul>
+                                <p class="analogy">🗣️ <strong>Analogy:</strong> Two people on phones trying to agree on a time. If the call drops (Partition), either stop talking until you reconnect (CP) or guess a time to keep going (AP).</p>
+                                <p><strong>Database Classifications:</strong></p>
+                                <ul class="styled-list">
+                                    <li><strong>CP:</strong> MongoDB, HBase - consistency over availability</li>
+                                    <li><strong>AP:</strong> Cassandra, DynamoDB - availability over consistency</li>
+                                    <li><strong>CA:</strong> Traditional RDBMS (only works without network partitions)</li>
+                                </ul>
+                                <div style="background: rgba(255,255,255,0.05); padding: 0.75rem; border-radius: 6px; margin-top: 0.75rem;">
+                                    <p style="margin-bottom: 0.5rem;"><strong>📌 Real-World Examples:</strong></p>
+                                    <ul class="styled-list" style="margin-bottom: 0;">
+                                        <li><strong>CP (Consistency + Partition):</strong> "If the call drops, we wait rather than guess."
+                                            <br>→ <em>Online Exam System:</em> Submissions stop during network failure to avoid duplicate answers.
+                                            <br>→ <em>Bank ATM:</em> Refuses withdrawals if it cannot reach the central system.</li>
+                                        <li><strong>AP (Availability + Partition):</strong> "Keep serving, fix inconsistencies later."
+                                            <br>→ <em>Shopping Cart:</em> Amazon lets you add items even during outages; syncs later.
+                                            <br>→ <em>Social Media Feed:</em> You might see slightly outdated likes/comments, but the app stays usable.</li>
+                                    </ul>
+                                    <p style="margin-top: 0.75rem; font-style: italic; opacity: 0.8;"><strong>Result:</strong> CP = Data is always correct but may be unavailable. AP = Always responds but data may be temporarily outdated.</p>
+                                </div>
+                            </div>
+
+                            <div class="note-card" style="margin-top: 1rem;">
+                                <h3 class="section-header">📦 Database Replication</h3>
+                                <p class="analogy">📋 <strong>Think:</strong> "Keep copies of your data so if one fails, others can take over."</p>
+                                <div class="grid-2">
+                                    <div>
+                                        <h4>Master-Slave</h4>
+                                        <p>One master handles writes, slaves handle reads.</p>
+                                        <p><em>Use:</em> Read-heavy workloads</p>
+                                        <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                                            <p style="margin: 0; font-size: 0.9rem;"><strong>📌 Example:</strong> News website - editors update articles on master; millions of readers fetch from multiple slave copies.</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4>Master-Master</h4>
+                                        <p>Multiple masters handle reads AND writes.</p>
+                                        <p><em>Challenge:</em> Conflict resolution</p>
+                                        <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                                            <p style="margin: 0; font-size: 0.9rem;"><strong>📌 Example:</strong> Google Docs - multiple users edit simultaneously; both servers accept changes and sync.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="note-card" style="margin-top: 1rem;">
+                                <h3 class="section-header">🔨 Sharding (Partitioning)</h3>
+                                <p>Splitting data across multiple databases.</p>
+                                <p class="analogy">📚 <strong>Think:</strong> "Too big for one box? Split it into smaller boxes."</p>
+                                <p class="analogy">📚 <strong>Analogy:</strong> A library puts A-M in East Wing, N-Z in West Wing due to space limits.</p>
+                                <p><strong>Strategies:</strong></p>
+                                <ul class="styled-list">
+                                    <li><strong>Hash-Based:</strong> Hash(key) % num_shards</li>
+                                    <li><strong>Range-Based:</strong> Date ranges, alphabetical</li>
+                                    <li><strong>Geographic:</strong> By region/country</li>
+                                </ul>
+                                <p><strong>Challenge:</strong> Hot spots (uneven data distribution), cross-shard queries</p>
+                                <div style="background: rgba(255,255,255,0.05); padding: 0.75rem; border-radius: 6px; margin-top: 0.75rem;">
+                                    <p style="margin-bottom: 0.5rem;"><strong>📌 Real-World Examples:</strong></p>
+                                    <ul class="styled-list" style="margin-bottom: 0;">
+                                        <li><strong>Hash-Based:</strong> User ID 12345 → Hash → Shard 3. Evenly distributes users across shards.</li>
+                                        <li><strong>Range-Based:</strong> Twitter stores tweets by date - Jan 2024 in Shard 1, Feb 2024 in Shard 2.</li>
+                                        <li><strong>Geographic:</strong> Netflix stores US user data in US servers, EU data in Europe - faster and complies with GDPR.</li>
+                                    </ul>
+                                    <p style="margin-top: 0.75rem; font-style: italic; opacity: 0.8;"><strong>Gain:</strong> Handle billions of records by distributing load. <strong>Lose:</strong> Cross-shard queries become complex.</p>
+                                </div>
+                            </div>
+
+                            <div class="note-card" style="margin-top: 1rem;">
+                                <h3 class="section-header">🔗 Consistent Hashing</h3>
+                                <p>Smart key distribution that minimizes rebalancing when adding/removing nodes.</p>
+                                <p class="analogy">⭕ <strong>Think:</strong> "Add or remove a server? Only neighbors need to adjust, not everyone."</p>
+                                <p class="analogy">⭕ <strong>Analogy:</strong> Keys are placed on a ring. Each server owns a section. Add a server? Only neighbors need to share keys.</p>
+                                <p><em>Used by:</em> Cassandra, DynamoDB, Redis Cluster</p>
+                                <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                                    <p style="margin: 0; font-size: 0.9rem;"><strong>📌 Example:</strong> Discord chat servers - if one server goes down, only users on that "slice" of the ring need to be reassigned, not all users worldwide.</p>
+                                    <p style="margin-top: 0.5rem; font-style: italic; opacity: 0.8;"><strong>Gain:</strong> Minimal disruption when scaling. <strong>Lose:</strong> Slightly more complex to implement than simple hashing.</p>
+                                </div>
+                            </div>
+
+                            <div class="note-card" style="margin-top: 1rem;">
+                                <h3 class="section-header">📑 Indexes</h3>
+                                <p>Speed up reads at the cost of slower writes.</p>
+                                <p class="analogy">📚 <strong>Think:</strong> "Like a book's index - jump to page 342 instead of reading every page."</p>
+                                <div class="grid-2">
+                                    <div>
+                                        <h4>Dense Index</h4>
+                                        <p>Entry for every row. Fast reads, more storage.</p>
+                                        <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                                            <p style="margin: 0; font-size: 0.9rem;"><strong>📌 Example:</strong> Phone contacts - every name has an entry pointing directly to its phone number.</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4>Sparse Index</h4>
+                                        <p>Entry for some rows. Less storage, slower reads.</p>
+                                        <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                                            <p style="margin: 0; font-size: 0.9rem;"><strong>📌 Example:</strong> Encyclopedia with chapter markers - jump to "Chapter M" then scan for "Mozart".</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chapter III: Architecture -->
+                    <div id="chapter3" class="summary-section fade-in">
+                        <div class="card">
+                            <h2>Chapter III: System Architecture Patterns</h2>
+                            <p style="margin-bottom: 1.5rem; opacity: 0.8;">Architectural patterns for building scalable systems.</p>
+
+                            <div class="note-card">
+                                <h3 class="section-header">🏗️ N-Tier Architecture</h3>
+                                <p>Separation of concerns into layers.</p>
+                                <p class="analogy">🏢 <strong>Think:</strong> "Each floor of the building has its own purpose."</p>
+                                <ul class="styled-list">
+                                    <li><strong>Presentation:</strong> UI/Frontend</li>
+                                    <li><strong>Business Logic:</strong> Application/API</li>
+                                    <li><strong>Data Access:</strong> Database/Storage</li>
+                                </ul>
+                                <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                                    <p style="margin: 0; font-size: 0.9rem;"><strong>📌 Example:</strong> Amazon.com - The website (Presentation) sends requests to the order processing logic (Business), which talks to the product database (Data). Each layer can be updated independently.</p>
+                                </div>
+                            </div>
+
+                            <div class="grid-2" style="margin-top: 1rem;">
+                                <div class="note-card">
+                                    <h3>🗿 Monolith</h3>
+                                    <p>Single deployable unit.</p>
+                                    <p class="analogy">🏠 <strong>Think:</strong> "One big house where everything lives together."</p>
+                                    <p><strong>Pros:</strong> Simple, fast communication, easy testing</p>
+                                    <p><strong>Cons:</strong> Hard to scale, tech lock-in, risky deployments</p>
+                                    <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                                        <p style="margin: 0; font-size: 0.9rem;"><strong>📌 Example:</strong> Early-stage startup app - login, payments, and notifications all in one codebase. Fast to build, but one bug can crash everything.</p>
+                                    </div>
+                                </div>
+                                <div class="note-card">
+                                    <h3>🧩 Microservices</h3>
+                                    <p>Independent, loosely coupled services.</p>
+                                    <p class="analogy">🏘️ <strong>Think:</strong> "A neighborhood of specialized houses, each handling one job."</p>
+                                    <p><strong>Pros:</strong> Scalable, tech flexibility, isolated failures</p>
+                                    <p><strong>Cons:</strong> Complex, distributed tracing, network latency</p>
+                                    <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                                        <p style="margin: 0; font-size: 0.9rem;"><strong>📌 Example:</strong> Netflix - separate services for user profiles, recommendations, streaming, billing. If billing fails, you can still browse movies.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="note-card" style="margin-top: 1rem;">
+                                <h3 class="section-header">📨 Message Brokers & Queues</h3>
+                                <p>Decouple components for async communication.</p>
+                                <p class="analogy">📋 <strong>Think:</strong> "Leave a message; they'll process it when ready."</p>
+                                <p class="analogy">🍽️ <strong>Analogy:</strong> Restaurant ticket rail - waiter (API) takes orders, chefs (workers) cook them one by one from the queue.</p>
+                                <p><strong>Key Concepts:</strong></p>
+                                <ul class="styled-list">
+                                    <li><strong>Producer:</strong> Sends messages</li>
+                                    <li><strong>Consumer:</strong> Processes messages</li>
+                                    <li><strong>Dead Letter Queue:</strong> Failed messages after max retries</li>
+                                    <li><strong>Backpressure:</strong> Queue filling faster than consumption</li>
+                                </ul>
+                                <p><em>Examples:</em> RabbitMQ, Apache Kafka, Amazon SQS</p>
+                                <div style="background: rgba(255,255,255,0.05); padding: 0.75rem; border-radius: 6px; margin-top: 0.75rem;">
+                                    <p style="margin-bottom: 0.5rem;"><strong>📌 Real-World Examples:</strong></p>
+                                    <ul class="styled-list" style="margin-bottom: 0;">
+                                        <li><strong>Email Service:</strong> User signs up → "Send welcome email" message added to queue → Email service picks it up and sends - user doesn't wait.</li>
+                                        <li><strong>Dead Letter Queue:</strong> An order to a discontinued product fails 3 times → moved to special queue for manual review.</li>
+                                        <li><strong>Backpressure:</strong> Black Friday sale - orders flood in faster than processing. Queue holds them safely until workers catch up.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="note-card" style="margin-top: 1rem;">
+                                <h3 class="section-header">📢 Publish-Subscribe Pattern</h3>
+                                <p>Fan-out messages to multiple subscribers.</p>
+                                <p class="analogy">� <strong>Think:</strong> "One announcement, many listeners."</p>
+                                <p class="analogy">�📺 <strong>Analogy:</strong> YouTube uploads a video, all subscribers get notified simultaneously.</p>
+                                <p><em>Examples:</em> Amazon SNS, Google Pub/Sub, Redis Pub/Sub</p>
+                                <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                                    <p style="margin: 0; font-size: 0.9rem;"><strong>📌 Example:</strong> Stock price update: When Apple stock changes, the trading platform broadcasts to all interested apps - portfolio tracker, news feed, trading bots - all at once.</p>
+                                </div>
+                            </div>
+
+                            <div class="note-card" style="margin-top: 1rem;">
+                                <h3 class="section-header">🚪 API Gateway</h3>
+                                <p>Single entry point for all client requests.</p>
+                                <p class="analogy">🏨 <strong>Think:</strong> "One reception desk for all guests, no matter which room they're going to."</p>
+                                <p><strong>Features:</strong></p>
+                                <ul class="styled-list">
+                                    <li>Authentication & Authorization</li>
+                                    <li>Rate Limiting & Throttling</li>
+                                    <li>Load Balancing</li>
+                                    <li>Request/Response transformation</li>
+                                    <li>Logging & Monitoring</li>
+                                </ul>
+                                <p><em>Examples:</em> Kong, AWS API Gateway, Nginx</p>
+                                <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                                    <p style="margin: 0; font-size: 0.9rem;"><strong>📌 Example:</strong> Mobile app calls api.myservice.com - the gateway checks login token, limits to 100 requests/minute, then routes to the right microservice (users, orders, payments).</p>
+                                </div>
+                            </div>
+
+                            <div class="note-card" style="margin-top: 1rem;">
+                                <h3 class="section-header">🔌 API Technologies</h3>
+                                <p class="analogy">🔧 <strong>Think:</strong> "Different tools for different jobs - pick the right one."</p>
+                                <table style="width:100%; border-collapse:collapse; margin-top:0.5rem;">
+                                    <tr style="background: rgba(255,255,255,0.1);">
+                                        <th style="padding:0.5rem; text-align:left;">Type</th>
+                                        <th style="padding:0.5rem; text-align:left;">Best For</th>
+                                    </tr>
+                                    <tr><td style="padding:0.3rem;"><strong>REST</strong></td><td style="padding:0.3rem;">Standard APIs, CRUD operations</td></tr>
+                                    <tr><td style="padding:0.3rem;"><strong>GraphQL</strong></td><td style="padding:0.3rem;">Flexible queries, avoid over-fetching</td></tr>
+                                    <tr><td style="padding:0.3rem;"><strong>gRPC</strong></td><td style="padding:0.3rem;">Internal microservice communication</td></tr>
+                                    <tr><td style="padding:0.3rem;"><strong>WebSockets</strong></td><td style="padding:0.3rem;">Real-time bidirectional communication</td></tr>
+                                    <tr><td style="padding:0.3rem;"><strong>SSE</strong></td><td style="padding:0.3rem;">Server-to-client streaming</td></tr>
+                                </table>
+                                <div style="background: rgba(255,255,255,0.05); padding: 0.75rem; border-radius: 6px; margin-top: 0.75rem;">
+                                    <p style="margin-bottom: 0.5rem;"><strong>📌 Real-World Examples:</strong></p>
+                                    <ul class="styled-list" style="margin-bottom: 0;">
+                                        <li><strong>REST:</strong> Twitter API - GET /tweets/123 returns tweet data. Simple, cacheable, widely understood.</li>
+                                        <li><strong>GraphQL:</strong> GitHub API - ask for exactly what you need: "Give me repo name and 5 latest issues" in one request.</li>
+                                        <li><strong>gRPC:</strong> Google internal services - 10x faster than REST, uses binary Protocol Buffers.</li>
+                                        <li><strong>WebSockets:</strong> Slack chat - messages appear instantly without refreshing the page.</li>
+                                        <li><strong>SSE:</strong> Live sports scores - server pushes score updates to your browser as they happen.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="note-card" style="margin-top: 1rem;">
+                                <h3 class="section-header">⚡ Event-Driven Architecture</h3>
+                                <p>Systems communicate via events.</p>
+                                <p class="analogy">🔔 <strong>Think:</strong> "Something happened → react to it."</p>
+                                <ul class="styled-list">
+                                    <li><strong>Event Producers:</strong> Publish events when something happens</li>
+                                    <li><strong>Event Routers:</strong> Filter and route events</li>
+                                    <li><strong>Event Consumers:</strong> React to events</li>
+                                </ul>
+                                <p><strong>Patterns:</strong> Event Sourcing, CQRS, Sagas</p>
+                                <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                                    <p style="margin: 0; font-size: 0.9rem;"><strong>📌 Example:</strong> E-commerce: "Order Placed" event → Inventory reduces stock, Shipping schedules delivery, Email sends confirmation - all listening and reacting independently.</p>
+                                </div>
+                            </div>
+
+                            <div class="note-card" style="margin-top: 1rem;">
+                                <h3 class="section-header">📝 CQRS (Command Query Responsibility Segregation)</h3>
+                                <p>Separate read and write models.</p>
+                                <p class="analogy">📖 <strong>Think:</strong> "Reading and writing have different needs - optimize them separately."</p>
+                                <p><strong>Command:</strong> Changes state (write)</p>
+                                <p><strong>Query:</strong> Returns data (read)</p>
+                                <p><em>Benefit:</em> Independent scaling of read/write workloads</p>
+                                <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                                    <p style="margin: 0; font-size: 0.9rem;"><strong>📌 Example:</strong> Twitter: Posting a tweet (write) goes to a database optimized for writes. Reading your timeline (read) comes from a denormalized cache optimized for fast reads. 100x more reads than writes!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chapter IV: Advanced Topics -->
+                    <div id="chapter4" class="summary-section fade-in">
+                        <div class="card">
+                            <h2>Chapter IV: Advanced System Design Topics</h2>
+                            <p style="margin-bottom: 1.5rem; opacity: 0.8;">Production-ready patterns and techniques.</p>
+
+                            <div class="note-card">
+                                <h3 class="section-header">📍 Geohashing & Quadtrees</h3>
+                                <p>Efficient location-based searching.</p>
+                                <p class="analogy">🗺️ <strong>Think:</strong> "Divide the world into smaller grids to find things nearby faster."</p>
+                                <p class="analogy">🗺️ <strong>Analogy:</strong> Instead of searching the whole world, divide it into grids and only search nearby grids.</p>
+                                <p><em>Used by:</em> Uber, Yelp, Google Maps</p>
+                                <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                                    <p style="margin: 0; font-size: 0.9rem;"><strong>📌 Example:</strong> Uber: When you request a ride, the app only searches drivers in your geohash cell (a few square kilometers), not all drivers worldwide. Finding nearest driver takes milliseconds instead of minutes.</p>
+                                </div>
+                            </div>
+
+                            <div class="note-card" style="margin-top: 1rem;">
+                                <h3 class="section-header">🔌 Circuit Breaker Pattern</h3>
+                                <p>Prevent cascade failures by stopping calls to failing services.</p>
+                                <p class="analogy">⚡ <strong>Think:</strong> "If something keeps failing, stop trying and give it time to recover."</p>
+                                <p class="analogy">⚡ <strong>Analogy:</strong> Like an electrical circuit breaker that trips to prevent damage when there's an overload.</p>
+                                <p><strong>States:</strong></p>
+                                <ul class="styled-list">
+                                    <li><strong>Closed:</strong> Normal operation</li>
+                                    <li><strong>Open:</strong> Blocking calls, failing fast</li>
+                                    <li><strong>Half-Open:</strong> Testing if service recovered</li>
+                                </ul>
+                                <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                                    <p style="margin: 0; font-size: 0.9rem;"><strong>📌 Example:</strong> Netflix: If the recommendations service fails 5 times, circuit opens → show generic "Popular movies" instead of waiting 30 seconds for timeouts. After 60 seconds, try recommendations again (half-open).</p>
+                                </div>
+                            </div>
+
+                            <div class="note-card" style="margin-top: 1rem;">
+                                <h3 class="section-header">🚦 Rate Limiting</h3>
+                                <p>Control request frequency to prevent abuse.</p>
+                                <p class="analogy">🚧 <strong>Think:</strong> "Only X requests per minute allowed. Calm down!"</p>
+                                <p><strong>Algorithms:</strong></p>
+                                <ul class="styled-list">
+                                    <li><strong>Token Bucket:</strong> Tokens refill over time</li>
+                                    <li><strong>Leaky Bucket:</strong> Fixed-rate processing</li>
+                                    <li><strong>Sliding Window:</strong> Rolling time window</li>
+                                </ul>
+                                <div style="background: rgba(255,255,255,0.05); padding: 0.75rem; border-radius: 6px; margin-top: 0.75rem;">
+                                    <p style="margin-bottom: 0.5rem;"><strong>📌 Real-World Examples:</strong></p>
+                                    <ul class="styled-list" style="margin-bottom: 0;">
+                                        <li><strong>Twitter API:</strong> Free tier = 50 tweets per 15 minutes. Exceeded? Wait or pay for more.</li>
+                                        <li><strong>Token Bucket:</strong> Like arcade tokens - you get 10 per hour. Use them anytime, but once empty, wait for refill.</li>
+                                        <li><strong>Login Protection:</strong> 5 wrong passwords → account locked for 15 minutes to prevent brute-force attacks.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="note-card" style="margin-top: 1rem;">
+                                <h3 class="section-header">🔍 Service Discovery</h3>
+                                <p>Automatically find service instances in dynamic environments.</p>
+                                <p class="analogy">📞 <strong>Think:</strong> "Phone book for microservices - find who to call."</p>
+                                <p><strong>Types:</strong></p>
+                                <ul class="styled-list">
+                                    <li><strong>Client-Side:</strong> Client queries service registry</li>
+                                    <li><strong>Server-Side:</strong> Load balancer routes to services</li>
+                                </ul>
+                                <p><em>Examples:</em> Consul, etcd, Zookeeper</p>
+                                <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                                    <p style="margin: 0; font-size: 0.9rem;"><strong>📌 Example:</strong> Kubernetes: New payment service starts → registers itself. Order service asks "Where is payment?" → gets IP addresses of all 5 healthy instances automatically.</p>
+                                </div>
+                            </div>
+
+                            <div class="note-card" style="margin-top: 1rem;">
+                                <h3 class="section-header">📊 Observability (The 3 Pillars)</h3>
+                                <p class="analogy">🔍 <strong>Think:</strong> "Know what's happening, why, and where in your system."</p>
+                                <div class="grid-2">
+                                    <div>
+                                        <strong>1. Metrics</strong><br>
+                                        "What is happening?"<br>
+                                        <em class="analogy">🚗 Speedometer</em>
+                                    </div>
+                                    <div>
+                                        <strong>2. Logging</strong><br>
+                                        "Why is it happening?"<br>
+                                        <em class="analogy">📓 Diary / Black Box</em>
+                                    </div>
+                                </div>
+                                <div class="note-card" style="margin-top:0.5rem;">
+                                    <strong>3. Tracing</strong><br>
+                                    "Where is it happening?"<br>
+                                    <em class="analogy">🕵️ Following the driver's GPS route through microservices</em>
+                                </div>
+                                <div style="background: rgba(255,255,255,0.05); padding: 0.75rem; border-radius: 6px; margin-top: 0.75rem;">
+                                    <p style="margin-bottom: 0.5rem;"><strong>📌 Real-World Examples:</strong></p>
+                                    <ul class="styled-list" style="margin-bottom: 0;">
+                                        <li><strong>Metrics:</strong> Dashboard showing "500 requests/second, 20ms response time, 0.1% errors."</li>
+                                        <li><strong>Logging:</strong> "Error at 2:45 PM: Database timeout on user ID 12345."</li>
+                                        <li><strong>Tracing:</strong> One slow checkout → trace shows it spent 4 seconds in payment service, pinpointing the bottleneck.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="note-card" style="margin-top: 1rem;">
+                                <h3 class="section-header">📈 SLA, SLO, SLI</h3>
+                                <p class="analogy">📝 <strong>Think:</strong> "Promise → Goal → Reality."</p>
+                                <ul class="styled-list">
+                                    <li><strong>SLA (Agreement):</strong> Contract with users (99.9% uptime)</li>
+                                    <li><strong>SLO (Objective):</strong> Internal target (99.95% uptime)</li>
+                                    <li><strong>SLI (Indicator):</strong> Actual measured value</li>
+                                </ul>
+                                <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                                    <p style="margin: 0; font-size: 0.9rem;"><strong>📌 Example:</strong> AWS promises 99.99% uptime (SLA). Internally they target 99.999% (SLO). Their dashboard shows 99.997% last month (SLI). Since SLI &gt; SLA, they're safe from penalties.</p>
+                                </div>
+                            </div>
+
+                            <div class="note-card" style="margin-top: 1rem;">
+                                <h3 class="section-header">🔐 Security Concepts</h3>
+                                <p class="analogy">🛡️ <strong>Think:</strong> "Who are you? What are you allowed to do? Is the conversation private?"</p>
+                                <ul class="styled-list">
+                                    <li><strong>OAuth 2.0:</strong> Authorization framework</li>
+                                    <li><strong>OIDC:</strong> Authentication on top of OAuth</li>
+                                    <li><strong>SSO:</strong> Single Sign-On across applications</li>
+                                    <li><strong>TLS/SSL:</strong> Encrypted communication</li>
+                                    <li><strong>mTLS:</strong> Mutual TLS for service-to-service</li>
+                                </ul>
+                                <div style="background: rgba(255,255,255,0.05); padding: 0.75rem; border-radius: 6px; margin-top: 0.75rem;">
+                                    <p style="margin-bottom: 0.5rem;"><strong>📌 Real-World Examples:</strong></p>
+                                    <ul class="styled-list" style="margin-bottom: 0;">
+                                        <li><strong>OAuth 2.0:</strong> "Log in with Google" - Spotify asks Google to verify you, without seeing your password.</li>
+                                        <li><strong>SSO:</strong> Login once to your company portal, and you're automatically logged into Slack, Jira, and Gmail.</li>
+                                        <li><strong>TLS/SSL:</strong> The padlock icon in your browser - data between you and the bank is encrypted.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="note-card" style="margin-top: 1rem;">
+                                <h3 class="section-header">🐳 VMs vs Containers</h3>
+                                <p class="analogy">🏠 <strong>Think:</strong> "VM = Full house with its own utilities. Container = Apartment in a shared building."</p>
+                                <table style="width:100%; border-collapse:collapse; margin-top:0.5rem;">
+                                    <tr style="background: rgba(255,255,255,0.1);">
+                                        <th style="padding:0.5rem; text-align:left;">Aspect</th>
+                                        <th style="padding:0.5rem; text-align:left;">VM</th>
+                                        <th style="padding:0.5rem; text-align:left;">Container</th>
+                                    </tr>
+                                    <tr><td style="padding:0.3rem;">Isolation</td><td style="padding:0.3rem;">Full OS</td><td style="padding:0.3rem;">Process-level</td></tr>
+                                    <tr><td style="padding:0.3rem;">Size</td><td style="padding:0.3rem;">GBs</td><td style="padding:0.3rem;">MBs</td></tr>
+                                    <tr><td style="padding:0.3rem;">Startup</td><td style="padding:0.3rem;">Minutes</td><td style="padding:0.3rem;">Seconds</td></tr>
+                                    <tr><td style="padding:0.3rem;">Resource Usage</td><td style="padding:0.3rem;">Heavy</td><td style="padding:0.3rem;">Light</td></tr>
+                                </table>
+                                <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                                    <p style="margin: 0; font-size: 0.9rem;"><strong>📌 Example:</strong> Deploying a web app: VM = spin up a 2GB Windows server (takes 2 minutes). Container = spin up a 50MB Docker image (takes 2 seconds). Run 40 containers on the same hardware that would only fit 5 VMs.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chapter V: Case Studies -->
+                    <div id="chapter5" class="summary-section fade-in">
+                        <div class="card">
+                            <h2>Chapter V: Real-World Case Studies</h2>
+                            <p style="margin-bottom: 1.5rem; opacity: 0.8;">Learn from how actual systems are designed.</p>
+
+                            <div class="note-card">
+                                <h3 class="section-header">🔗 URL Shortener (like Bitly)</h3>
+                                <p class="analogy">💡 <strong>Think:</strong> "Long URL in → short code out. Short code in → redirect to long URL."</p>
+                                <p><strong>Key Components:</strong></p>
+                                <ul class="styled-list">
+                                    <li>Key Generation Service (KGS) for unique short URLs</li>
+                                    <li>Base62 encoding for short keys</li>
+                                    <li>Cache for popular short URLs</li>
+                                    <li>301 redirect to original URL</li>
+                                </ul>
+                                <p><strong>Scaling:</strong> Horizontal sharding by key hash</p>
+                                <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                                    <p style="margin: 0; font-size: 0.9rem;"><strong>📌 Design Insight:</strong> bit.ly/abc123 is read 100x more than it's created. Cache hot URLs in Redis for instant redirects. Generate unique IDs in advance (KGS) to avoid collisions.</p>
+                                </div>
+                            </div>
+
+                            <div class="note-card" style="margin-top: 1rem;">
+                                <h3 class="section-header">💬 WhatsApp / Messaging System</h3>
+                                <p class="analogy">💡 <strong>Think:</strong> "Send message → deliver instantly if online, queue if offline → confirm delivery."</p>
+                                <p><strong>Key Components:</strong></p>
+                                <ul class="styled-list">
+                                    <li>WebSocket connections for real-time messaging</li>
+                                    <li>Message queues for delivery</li>
+                                    <li>Cassandra for message storage</li>
+                                    <li>Push notifications via FCM/APNS</li>
+                                </ul>
+                                <p><strong>Features:</strong> Read receipts, online status, group chats</p>
+                                <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                                    <p style="margin: 0; font-size: 0.9rem;"><strong>📌 Design Insight:</strong> User sends message → stored in their device + server → delivered to recipient's device. Offline? Queue it and send push notification. Double checkmarks = delivered + read.</p>
+                                </div>
+                            </div>
+
+                            <div class="note-card" style="margin-top: 1rem;">
+                                <h3 class="section-header">🐦 Twitter / Social Feed</h3>
+                                <p class="analogy">💡 <strong>Think:</strong> "100 million users want to see tweets from people they follow - instantly."</p>
+                                <p><strong>Key Components:</strong></p>
+                                <ul class="styled-list">
+                                    <li>Fanout service for timeline generation</li>
+                                    <li>Celebrity handling (pull vs push)</li>
+                                    <li>Search using Elasticsearch</li>
+                                    <li>Media storage in object stores</li>
+                                </ul>
+                                <p><strong>Feed Generation:</strong></p>
+                                <ul class="styled-list">
+                                    <li><strong>Push (Fanout-on-write):</strong> Pre-compute for most users</li>
+                                    <li><strong>Pull (Fanout-on-read):</strong> Compute at read time for celebrities</li>
+                                </ul>
+                                <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                                    <p style="margin: 0; font-size: 0.9rem;"><strong>📌 Design Insight:</strong> When you post, Twitter pushes your tweet to all followers' timelines (fanout-on-write). But for celebrities with 50M followers? Pull at read time instead - otherwise Lady Gaga's tweet triggers 50M database writes!</p>
+                                </div>
+                            </div>
+
+                            <div class="note-card" style="margin-top: 1rem;">
+                                <h3 class="section-header">🎬 Netflix / Video Streaming</h3>
+                                <p class="analogy">💡 <strong>Think:</strong> "Stream hours of HD video to millions simultaneously without buffering."</p>
+                                <p><strong>Key Components:</strong></p>
+                                <ul class="styled-list">
+                                    <li>CDN for video distribution</li>
+                                    <li>Adaptive bitrate streaming</li>
+                                    <li>Content pre-positioning</li>
+                                    <li>Microservices for recommendations</li>
+                                </ul>
+                                <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                                    <p style="margin: 0; font-size: 0.9rem;"><strong>📌 Design Insight:</strong> Video is pre-encoded in multiple qualities (240p to 4K). CDN serves from nearby servers. Slow connection? Automatically drops to lower quality. New popular show drops? Pre-load it on CDNs worldwide before release.</p>
+                                </div>
+                            </div>
+
+                            <div class="note-card" style="margin-top: 1rem;">
+                                <h3 class="section-header">🚗 Uber / Ride-Sharing</h3>
+                                <p class="analogy">💡 <strong>Think:</strong> "Match riders with nearby drivers in seconds, track both in real-time."</p>
+                                <p><strong>Key Components:</strong></p>
+                                <ul class="styled-list">
+                                    <li>Location tracking with Geohashing</li>
+                                    <li>Matching service for drivers/riders</li>
+                                    <li>ETA calculation</li>
+                                    <li>Real-time price calculation (surge)</li>
+                                </ul>
+                                <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                                    <p style="margin: 0; font-size: 0.9rem;"><strong>📌 Design Insight:</strong> Driver locations update every 4 seconds. Rider requests → system finds drivers in same geohash cell → ranks by ETA → notifies best match. Demand high? Surge pricing kicks in automatically.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interview Framework -->
+                    <div id="interview" class="summary-section fade-in">
+                        <div class="card">
+                            <h2>💼 System Design Interview Framework</h2>
+                            <p style="margin-bottom: 1.5rem; opacity: 0.8;">A structured approach to tackle any system design question.</p>
+
+                            <div class="note-card">
+                                <h3 class="section-header">Step 1: Requirements Clarification</h3>
+                                <p class="analogy">🎯 <strong>Think:</strong> "Don't assume - ask questions first!"</p>
+                                <p><strong>Functional:</strong> What does the system DO?</p>
+                                <p><strong>Non-Functional:</strong> Scale, latency, availability, consistency</p>
+                                <p><strong>Extended:</strong> Nice-to-have features</p>
+                                <p class="analogy">🍕 <strong>Analogy:</strong> "I want a pepperoni pizza" (functional) + "in 30 mins, hot" (non-functional)</p>
+                                <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                                    <p style="margin: 0; font-size: 0.9rem;"><strong>📌 Interview Tip:</strong> Ask: "How many users? Read-heavy or write-heavy? Global or single region? What's the latency budget?" This shows you think before you build.</p>
+                                </div>
+                            </div>
+
+                            <div class="note-card" style="margin-top: 1rem;">
+                                <h3 class="section-header">Step 2: Estimation & Constraints</h3>
+                                <p class="analogy">📊 <strong>Think:</strong> "Know your numbers - they drive your design choices."</p>
+                                <ul class="styled-list">
+                                    <li>Daily Active Users (DAU)</li>
+                                    <li>Requests per second (RPS)</li>
+                                    <li>Storage requirements</li>
+                                    <li>Bandwidth needs</li>
+                                    <li>Read/Write ratio</li>
+                                </ul>
+                                <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                                    <p style="margin: 0; font-size: 0.9rem;"><strong>📌 Example:</strong> 10M DAU, each user sends 5 messages/day = 50M messages/day = ~600 messages/second. Storage = 50M × 1KB = 50GB/day = 18TB/year. Now you know you need sharding!</p>
+                                </div>
+                            </div>
+
+                            <div class="note-card" style="margin-top: 1rem;">
+                                <h3 class="section-header">Step 3: High-Level Design</h3>
+                                <p class="analogy">🖼️ <strong>Think:</strong> "Draw the big picture first - boxes and arrows."</p>
+                                <p>Draw the "Happy Path" architecture:</p>
+                                <p style="font-family: monospace; background: rgba(0,0,0,0.2); padding: 0.5rem; border-radius: 4px;">
+                                    Client → CDN → Load Balancer → API Gateway → Services → Database
+                                </p>
+                                <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                                    <p style="margin: 0; font-size: 0.9rem;"><strong>📌 Interview Tip:</strong> Start simple! Don't over-engineer from the start. Show a basic working system, then add complexity based on requirements.</p>
+                                </div>
+                            </div>
+
+                            <div class="note-card" style="margin-top: 1rem;">
+                                <h3 class="section-header">Step 4: Data Model</h3>
+                                <p class="analogy">🗃️ <strong>Think:</strong> "What data do we store? How is it related?"</p>
+                                <ul class="styled-list">
+                                    <li>Define entities and relationships</li>
+                                    <li>Choose SQL vs NoSQL</li>
+                                    <li>Design schemas</li>
+                                </ul>
+                                <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                                    <p style="margin: 0; font-size: 0.9rem;"><strong>📌 Example:</strong> URL Shortener: Table with columns (short_code, original_url, created_at, user_id). Simple key-value access → NoSQL like DynamoDB is perfect.</p>
+                                </div>
+                            </div>
+
+                            <div class="note-card" style="margin-top: 1rem;">
+                                <h3 class="section-header">Step 5: API Design</h3>
+                                <p>Define key endpoints:</p>
+                                <p style="font-family: monospace; font-size: 0.9rem;">
+                                    POST /api/users - Create user<br>
+                                    GET /api/users/{id} - Get user<br>
+                                    PUT /api/users/{id} - Update user
+                                </p>
+                            </div>
+
+                            <div class="note-card" style="margin-top: 1rem;">
+                                <h3 class="section-header">Step 6: Deep Dive</h3>
+                                <p class="analogy">🔬 <strong>Think:</strong> "Pick 2-3 critical components and explain them in detail."</p>
+                                <ul class="styled-list">
+                                    <li>How to partition data?</li>
+                                    <li>How to cache effectively?</li>
+                                    <li>How to handle failures?</li>
+                                    <li>How to secure the system?</li>
+                                </ul>
+                                <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                                    <p style="margin: 0; font-size: 0.9rem;"><strong>📌 Interview Tip:</strong> Don't try to cover everything! Focus on what matters most for THIS system. For messaging: focus on delivery guarantees. For payment: focus on consistency.</p>
+                                </div>
+                            </div>
+
+                            <div class="note-card" style="margin-top: 1rem;">
+                                <h3 class="section-header">Step 7: Identify Bottlenecks</h3>
+                                <p class="analogy">⚠️ <strong>Think:</strong> "What could go wrong? How do we prevent it?"</p>
+                                <ul class="styled-list">
+                                    <li>Single points of failure?</li>
+                                    <li>Database bottlenecks?</li>
+                                    <li>Network bottlenecks?</li>
+                                    <li>How to add redundancy?</li>
+                                </ul>
+                                <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px; margin-top: 0.5rem;">
+                                    <p style="margin: 0; font-size: 0.9rem;"><strong>📌 Example:</strong> "If the database goes down, we lose everything. Solution: Master-Slave replication with automatic failover. Slave becomes master in 30 seconds."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="scenarios"
+                        style="text-align: center; margin-top: 4rem; margin-bottom: 4rem;"
+                        class="fade-in">
+                        <h2>Ready for the Real World?</h2>
+                        <p style="margin-bottom: 1.5rem;">Test your knowledge with 50 scenario-based questions covering all topics.</p>
+                        <a href="quiz.html" class="btn">Take the Scenario
+                            Quiz</a>
+                    </div>
+
+                </main>
+            </div>
+        </div>
+
+        <script src="js/main.js"></script>
+
+        <script>
+        // Tab Navigation Logic
+        function initTabs() {
+            const navItems = document.querySelectorAll('.course-nav-item');
+            const sections = document.querySelectorAll('.summary-section');
+
+            function showSection(targetId) {
+                // Hide all sections
+                sections.forEach(sec => {
+                    sec.style.display = 'none';
+                    sec.classList.remove('active-tab');
+                });
+
+                // Show target section
+                const target = document.getElementById(targetId);
+                if (target) {
+                    target.style.display = 'block';
+                    // Small timeout to allow display:block to apply before adding opacity class for animation
+                    setTimeout(() => target.classList.add('visible'), 10);
+                }
+
+                // Update Nav State
+                navItems.forEach(item => {
+                    item.classList.remove('active');
+                    if (item.getAttribute('href') === '#' + targetId) {
+                        item.classList.add('active');
+                    }
+                });
+
+                // Scroll to top of content
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // Event Listeners
+            navItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = item.getAttribute('href').substring(1);
+                    showSection(targetId);
+                });
+            });
+
+            // Initialize: Show first section (Intro) or hash if present
+            const initialHash = window.location.hash.substring(1);
+            if (initialHash && document.getElementById(initialHash)) {
+                showSection(initialHash);
+            } else {
+                showSection('intro');
+            }
+        }
+        const container = document.getElementById("videoContainer");
+        const hostname = window.location.hostname;
+
+        if (hostname === "kzedu.test") {
+            // Local video
+            container.innerHTML = `
+              <video controls style="width: 100%;">
+                <source src="System Design Concepts Course and Interview Prep.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            `;
+        } else {
+            // YouTube iframe
+            container.innerHTML = `
+              <iframe
+                width="100%"
+                height="450"
+                src="https://www.youtube.com/embed/F2FmTdLtb_4"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+            `;
+        }
+
+        // Init
+        document.addEventListener('DOMContentLoaded', initTabs);
+    </script>
+    </body>
+
+</html>

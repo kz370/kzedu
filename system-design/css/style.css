@@ -370,6 +370,30 @@ header nav a:hover, header nav a.active {
 }
 .feedback.correct { background: rgba(16, 185, 129, 0.2); border: 1px solid var(--success); color: #d1fae5; }
 .feedback.incorrect { background: rgba(239, 68, 68, 0.2); border: 1px solid var(--error); color: #fee2e2; }
+.feedback.dont-know { background: rgba(251, 191, 36, 0.2); border: 1px solid #fbbf24; color: #fef3c7; }
+
+/* Correct answer highlight for Don't Know */
+.option-btn.correct-highlight {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.3), rgba(16, 185, 129, 0.15));
+    border-color: var(--success) !important;
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+}
+
+/* Quiz action buttons layout */
+.quiz-actions .action-left {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.quiz-actions .action-left .btn-secondary {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+    opacity: 0.85;
+}
+
+.quiz-actions .action-left .btn-secondary:hover {
+    opacity: 1;
+}
 
 /* Answers Page */
 .qa-item {
@@ -404,3 +428,276 @@ header nav a:hover, header nav a.active {
 .delay-100 { animation-delay: 0.1s; }
 .delay-200 { animation-delay: 0.2s; }
 .delay-300 { animation-delay: 0.3s; }
+
+/* Wrong Answers Review Section */
+.wrong-answers-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.wrong-answers-header h3 {
+    color: var(--secondary);
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.wrong-answers-subtitle {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.wrong-answers-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.wrong-answer-item {
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.wrong-answer-item:hover {
+    background: rgba(239, 68, 68, 0.12);
+    border-color: rgba(239, 68, 68, 0.4);
+    transform: translateX(4px);
+}
+
+.wrong-answer-question {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.question-number-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 28px;
+    height: 28px;
+    background: linear-gradient(135deg, var(--error), #f87171);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.answer-comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 600px) {
+    .answer-comparison {
+        grid-template-columns: 1fr;
+    }
+}
+
+.your-answer, .correct-answer {
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.your-answer {
+    border-left: 3px solid var(--error);
+}
+
+.correct-answer {
+    border-left: 3px solid var(--success);
+}
+
+.answer-label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.your-answer .answer-label {
+    color: #fca5a5;
+}
+
+.correct-answer .answer-label {
+    color: #6ee7b7;
+}
+
+.answer-text {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--text-main);
+}
+
+.answer-text.wrong {
+    text-decoration: line-through;
+    opacity: 0.85;
+}
+
+.answer-text.correct {
+    font-weight: 500;
+}
+
+.wrong-answer-feedback {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    background: rgba(139, 92, 246, 0.15);
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    color: #e0d4f7;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.feedback-icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+/* Perfect Score Celebration */
+.perfect-score {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(59, 130, 246, 0.15));
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: 1rem;
+    animation: fadeIn 0.6s ease-out, pulse 2s ease-in-out infinite;
+}
+
+.perfect-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 0.75rem;
+}
+
+.perfect-score p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #6ee7b7;
+    margin: 0;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
+    }
+}
+
+/* Chapter Selection Cards */
+.chapter-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 2px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    min-height: 100px;
+    text-align: center;
+}
+
+.chapter-card:hover {
+    background: rgba(99, 102, 241, 0.1);
+    border-color: rgba(99, 102, 241, 0.4);
+    transform: translateY(-2px);
+}
+
+.chapter-card.selected {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.15));
+    border-color: var(--primary);
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3), inset 0 0 30px rgba(99, 102, 241, 0.05);
+}
+
+.chapter-card.selected::after {
+    content: "✓";
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    font-size: 0.75rem;
+    color: var(--success);
+    font-weight: bold;
+}
+
+.chapter-card {
+    position: relative;
+}
+
+.chapter-card-icon {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+    filter: grayscale(0.2);
+    transition: filter 0.2s, transform 0.2s;
+}
+
+.chapter-card:hover .chapter-card-icon,
+.chapter-card.selected .chapter-card-icon {
+    filter: grayscale(0);
+    transform: scale(1.1);
+}
+
+.chapter-card-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 0.25rem;
+    line-height: 1.2;
+}
+
+.chapter-card-count {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    opacity: 0.8;
+}
+
+.chapter-card.selected .chapter-card-name {
+    color: #c4b5fd;
+}
+
+.chapter-card.selected .chapter-card-count {
+    color: var(--primary);
+    opacity: 1;
+}
+
+/* Responsive adjustments for chapter cards */
+@media (max-width: 480px) {
+    #chapter-cards {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    .chapter-card {
+        padding: 0.75rem;
+        min-height: 80px;
+    }
+    
+    .chapter-card-icon {
+        font-size: 1.5rem;
+    }
+    
+    .chapter-card-name {
+        font-size: 0.8rem;
+    }
+}

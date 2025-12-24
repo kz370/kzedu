@@ -25,7 +25,57 @@
                 <div class="progress-bar" id="progress-bar"></div>
             </div>
 
-            <div id="question-box">
+            <!-- Quiz Setup Screen -->
+            <div id="setup-box">
+                <div style="text-align: center;">
+                    <h2 style="margin-bottom: 0.5rem;">⚙️ Quiz Settings</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem;">Customize your quiz experience</p>
+                    
+                    <!-- Chapter Selection Cards -->
+                    <div class="setup-option" style="margin-bottom: 2rem;">
+                        <label style="display: block; margin-bottom: 1rem; font-weight: 500;">
+                            📖 Select Chapter
+                        </label>
+                        
+                        <div id="chapter-cards" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.75rem; max-width: 600px; margin: 0 auto;">
+                            <!-- Cards populated by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <!-- Question Count -->
+                    <div class="setup-option" style="margin-bottom: 2rem;">
+                        <label for="question-count-input" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">
+                            🔢 Number of Questions
+                        </label>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
+                            Available: <span id="total-questions-count">50</span> questions
+                        </p>
+                        <div style="display: flex; gap: 0.5rem; justify-content: center; align-items: center; flex-wrap: wrap;">
+                            <input 
+                                type="number" 
+                                id="question-count-input" 
+                                min="1" 
+                                max="50" 
+                                value="10"
+                                style="width: 80px; padding: 0.75rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-secondary); color: var(--text-primary); font-size: 1rem; text-align: center;"
+                            >
+                            <button id="set-all-btn" class="btn btn-secondary" style="padding: 0.75rem 1rem;">All Questions</button>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <button id="start-quiz-btn" class="btn" style="padding: 1rem 2rem; font-size: 1.1rem;">
+                            🚀 Start Quiz
+                        </button>
+                    </div>
+                    
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 1.5rem;">
+                        Questions are randomly selected and shuffled each time.
+                    </p>
+                </div>
+            </div>
+
+            <div id="question-box" style="display: none;">
                 <div class="question-header" style="display: flex; justify-content: space-between; margin-bottom: 1rem; color: var(--text-muted);">
                     <span id="question-number">Question 1/10</span>
                     <span id="score-display">Score: 0</span>
@@ -41,20 +91,33 @@
                     <!-- Feedback injected by JS -->
                 </div>
 
-                <div style="margin-top: 2rem; text-align: right;">
-                    <button id="next-btn" class="btn" style="display: none;">Next Question</button>
-                    <button id="finish-btn" class="btn" style="display: none;">See Results</button>
+                <div class="quiz-actions" style="margin-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+                    <div class="action-left">
+                        <button id="skip-btn" class="btn btn-secondary">Skip Question</button>
+                        <button id="dont-know-btn" class="btn btn-secondary">Don't Know</button>
+                    </div>
+                    <div class="action-right">
+                        <button id="next-btn" class="btn" style="display: none;">Next Question</button>
+                        <button id="finish-btn" class="btn" style="display: none;">See Results</button>
+                    </div>
                 </div>
             </div>
 
-            <div id="result-box" style="display: none; text-align: center;">
-                <h2>Quiz Complete!</h2>
-                <div id="final-score" style="font-size: 4rem; margin: 2rem 0; font-weight: bold; background: linear-gradient(to right, #10b981, #3b82f6); -webkit-background-clip: text; background-clip: text; color: transparent;">0%</div>
-                <p id="result-message">Great job completing the assessment.</p>
-                <br>
-                <div style="display: flex; gap: 1rem; justify-content: center;">
-                    <button id="restart-btn" class="btn">Restart Quiz</button>
-                    <a href="answers.html" class="btn btn-secondary">Review Answers</a>
+            <div id="result-box" style="display: none;">
+                <div style="text-align: center;">
+                    <h2>Quiz Complete!</h2>
+                    <div id="final-score" style="font-size: 4rem; margin: 2rem 0; font-weight: bold; background: linear-gradient(to right, #10b981, #3b82f6); -webkit-background-clip: text; background-clip: text; color: transparent;">0%</div>
+                    <p id="result-message">Great job completing the assessment.</p>
+                    <br>
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <button id="restart-btn" class="btn">Restart Quiz</button>
+                        <a href="answers.html" class="btn btn-secondary">Review All Answers</a>
+                    </div>
+                </div>
+                
+                <!-- Wrong Answers Section for Study -->
+                <div id="wrong-answers-container" style="margin-top: 2.5rem;">
+                    <!-- Populated by JavaScript -->
                 </div>
             </div>
 
